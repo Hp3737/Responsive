@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Personal Portfolio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    header {
+      background: url('https://images.unsplash.com/photo-1483794344563-d27a8d18014e?fit=crop&w=1600&q=80') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+
+    nav {
+      background-color: rgba(0,0,0,0.8);
+      padding: 10px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 40px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ddd;
+    }
+
+    .hero-text {
+      background: rgba(0,0,0,0.6);
+      padding: 20px 40px;
+      border-radius: 8px;
+      margin-top: 60px;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .about-img {
+      flex: 1;
+      text-align: center;
+    }
+
+    .about-img img {
+      max-width: 200px;
+      border-radius: 50%;
+    }
+
+    .about-text {
+      flex: 2;
+    }
+
+    .skills {
+      margin-top: 20px;
+    }
+
+    .bar {
+      background: #eee;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .fill {
+      background-color: #555;
+      height: 20px;
+      border-radius: 20px;
+      text-indent: 10px;
+      color: white;
+      line-height: 20px;
+      font-size: 12px;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      background: #555;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      flex-wrap: wrap;
+    }
+
+    .portfolio-hero {
+      background: url('https://images.unsplash.com/photo-1536924940849-bb3b8e8b25c6?fit=crop&w=1600&q=80') no-repeat center center/cover;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 2em;
+      text-transform: uppercase;
+    }
+
+    .portfolio-images {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .portfolio-images img {
+      width: 100%;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .portfolio-images img:hover {
+      transform: scale(1.05);
+    }
+
+    .contact-hero {
+      background: url('https://images.unsplash.com/photo-1504198453319-5ce911bafcde?fit=crop&w=1600&q=80') no-repeat center center/cover;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 2em;
+      text-transform: uppercase;
+    }
+
+    .contact-info {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+
+    button {
+      background-color: black;
+      color: white;
+      padding: 10px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #333;
+    }
+
+    footer {
+      background: #555;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    footer p {
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .about-container {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <div class="hero-text">
+      <h1>MY WEBSITE LOGO</h1>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p style="text-align:center;"><em>I love photography</em></p>
+    <div class="about-container">
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1540569014015-19a7be504e3a" alt="My Photo">
+        <p><b>My Name</b></p>
+      </div>
+      <div class="about-text">
+        <p>
+          Welcome to my website. I am a photographer and designer who loves to create and share visual stories. This portfolio showcases my work, experiences, and creative capabilities.
+        </p>
+        <div class="skills">
+          <p>I'm really good at:</p>
+          <p>📷 Photography</p>
+          <div class="bar"><div class="fill" style="width:90%;">90%</div></div>
+          <p>💻 Web Design</p>
+          <div class="bar"><div class="fill" style="width:85%;">85%</div></div>
+          <p>🖼 Photoshop</p>
+          <div class="bar"><div class="fill" style="width:75%;">75%</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div>14+<br>Partners</div>
+    <div>55+<br>Projects Done</div>
+    <div>89+<br>Happy Clients</div>
+    <div>150+<br>Meetings</div>
+  </section>
+
+  <div class="portfolio-hero" id="portfolio">
+    PORTFOLIO
+  </div>
+
+  <section>
+    <div class="mywork" style="text-align: center;">
+      <p><em>My Work</em></p>
+      <p>Click on the images to make them bigger</p>
+      <div class="portfolio-images">
+        <img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde" alt="1">
+        <img src="https://images.unsplash.com/photo-1612832021245-8414f2f5b3e0" alt="2">
+        <img src="https://images.unsplash.com/photo-1585672791440-fb9d80b51c98" alt="3">
+        <img src="https://images.unsplash.com/photo-1586810724476-c294fb7ac01b" alt="4">
+        <img src="https://images.unsplash.com/photo-1591280063444-d3c514eb6e13" alt="5">
+        <img src="https://images.unsplash.com/photo-1579546928686-286c9fbde1ec" alt="6">
+      </div>
+      <button style="margin-top: 20px;">LOAD MORE</button>
+    </div>
+  </section>
+
+  <div class="contact-hero" id="contact">
+    CONTACT
+  </div>
+
+  <section>
+    <div class="contact-info">
+      <h3>WHERE I WORK</h3>
+      <p>I’d love your feedback!</p>
+      <p>📍 Chicago, US</p>
+      <p>📞 Phone: +00 151515</p>
+      <p>✉ Email: mail@mail.com</p>
+    </div>
+    <form>
+      <input type="text" placeholder="Name">
+      <input type="email" placeholder="Email">
+      <textarea rows="5" placeholder="Message"></textarea>
+      <button type="submit">SEND MESSAGE</button>
+    </form>
+  </section>
+
+  <footer>
+    <a href="#top">⬆ To the top</a>
+    <div>
+      <p>🌐 Follow me: Instagram | Facebook | Twitter | LinkedIn</p>
+      <p>Powered by W3.CSS</p>
+    </div>
+  </footer>
+
+</body>
+</html>
